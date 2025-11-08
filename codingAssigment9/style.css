@@ -1,0 +1,156 @@
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --accent: #2b6cb0;
+  --muted: #6b7280;
+  --result-bg: #eef6ff;
+  --result-border: #cfe3ff;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #fdfdfd);
+  color: #111827;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding: 32px;
+}
+
+main#app{
+  width:100%;
+  max-width: var(--max-width);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(17,24,39,0.06);
+  text-align:center;
+}
+
+/* Heading */
+h2{
+  margin: 0 0 18px 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.2px;
+  color: var(--accent);
+}
+
+/* Centered section helper */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Rules: left-justified but centered as a block */
+.rules-container {
+  width: 60%;
+  min-width: 240px;
+  margin-bottom: 14px;
+  text-align: center; /* centers the block */
+}
+
+.rules {
+  list-style: disc;
+  padding-left: 20px; /* left-justified list inside centered block */
+  margin: 0;
+  text-align: left;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* HR styling: ~50% wider than the row of buttons (trial & error) */
+.wide-hr{
+  border: none;
+  height: 1px;
+  width: 72%;
+  background: linear-gradient(90deg, rgba(43,108,176,0.08), rgba(43,108,176,0.18));
+  margin: 16px 0;
+}
+
+/* Buttons row */
+.buttons-row{
+  display:flex;
+  gap: 16px;
+  justify-content:center;
+  align-items:center;
+  margin: 6px 0 6px 0;
+}
+
+.choice-btn {
+  min-width: 110px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid rgba(43,108,176,0.12);
+  background: linear-gradient(180deg,#ffffff,#f7fbff);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(43,108,176,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.choice-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(43,108,176,0.12); }
+
+/* Result box styling */
+.result-box{
+  margin-top: 14px;
+  width: 68%;
+  min-width: 260px;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid var(--result-border);
+  background: var(--result-bg);
+  text-align: left; /* left-justified content inside centered box */
+}
+
+.result-text{
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.choices-text{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Win counter */
+.win-counter{
+  margin-top: 16px;
+  text-align:center;
+  font-size: 1rem;
+  color: #111827;
+}
+
+/* Play again row */
+.play-again-row{
+  margin-top: 18px;
+}
+
+.play-again-btn{
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(43,108,176,0.18);
+}
+
+.play-again-btn:hover{ transform: translateY(-2px); }
+
+/* Hidden helper */
+.hidden { display: none; }
+
+/* Responsive */
+@media (max-width:560px){
+  .rules-container, .result-box { width: 92%; }
+  .choice-btn { min-width: 86px; padding: 10px 10px; }
+  .wide-hr{ width: 84%; }
+}
