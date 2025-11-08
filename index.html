@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BNH Revisited</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <h2>BNH — Bear • Ninja • Hunter</h2>
+
+    <!-- Initial display container -->
+    <section id="initial" class="centered">
+      <div class="rules-container">
+        <ul class="rules">
+          <li>Bear defeats Ninja</li>
+          <li>Ninja defeats Hunter</li>
+          <li>Hunter defeats Bear</li>
+        </ul>
+      </div>
+
+      <hr class="wide-hr" />
+
+      <div class="buttons-row">
+        <!-- Use HTML Events on buttons as requested -->
+        <button class="choice-btn" onclick="playGame('Bear')">Bear</button>
+        <button class="choice-btn" onclick="playGame('Ninja')">Ninja</button>
+        <button class="choice-btn" onclick="playGame('Hunter')">Hunter</button>
+      </div>
+
+      <hr class="wide-hr" />
+    </section>
+
+    <!-- Results container (hidden initially) -->
+    <section id="result" class="centered hidden">
+      <div class="result-box" aria-live="polite">
+        <p id="result-text" class="result-text"></p>
+        <p id="choices-text" class="choices-text"></p>
+      </div>
+
+      <!-- Win counter only displayed after a single game -->
+      <div id="win-counter" class="win-counter hidden">
+        <p><strong>Session Wins</strong></p>
+        <p>Player: <span id="player-wins">0</span> — Computer: <span id="computer-wins">0</span></p>
+      </div>
+
+      <div class="play-again-row">
+        <button class="play-again-btn" onclick="showInitial()">Play Again</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
